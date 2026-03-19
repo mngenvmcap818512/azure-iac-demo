@@ -4,6 +4,7 @@
 
 terraform {
 	backend "azurerm" {
+		use_oidc             = true
 		resource_group_name  = "terraform-demo"
 		# Optional: specify subscription where the storage account lives
 		# Replace with your subscription id, or remove to use the currently
