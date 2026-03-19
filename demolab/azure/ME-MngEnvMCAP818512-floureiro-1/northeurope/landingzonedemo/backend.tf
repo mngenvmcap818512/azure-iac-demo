@@ -18,7 +18,14 @@ terraform {
 
 /* Notes:
  - Authenticate locally with `az login` before running `terraform init`.
- - To run in CI, set ARM_CLIENT_ID, ARM_CLIENT_SECRET, ARM_SUBSCRIPTION_ID, ARM_TENANT_ID env vars.
- - Change `resource_group_name` to the actual RG containing `terraformstatefllabs` if needed.
+ - For OIDC to work with managed identity, ensure:
+   1. You are logged in with the correct Azure account: az account show
+   2. The storage account allows your managed identity access
+   3. Consider setting explicit env vars if needed:
+      ARM_CLIENT_ID (managed identity client ID)
+      ARM_SUBSCRIPTION_ID (already in config above)
+      ARM_TENANT_ID
+      ARM_USE_OIDC=true
+ - In CI/CD: Set ARM_CLIENT_ID, ARM_SUBSCRIPTION_ID, ARM_TENANT_ID, ARM_USE_OIDC=true env vars
 */
 

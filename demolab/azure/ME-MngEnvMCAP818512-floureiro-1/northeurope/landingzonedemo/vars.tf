@@ -17,5 +17,6 @@ variable "tags" {
     environment = "CICDdemo"
     owner       = "floureiro@microsoft.com"
     landingzone = "demolandzone"
+    provisionedby = "terraform"
   }
 }
