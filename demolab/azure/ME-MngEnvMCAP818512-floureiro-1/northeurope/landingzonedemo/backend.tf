@@ -5,7 +5,8 @@
 terraform {
 	backend "azurerm" {
 		use_oidc             = true
-		client_id            = "4fbfaeab-aea9-4f8c-9dc8-daed7be87f8b"  # Set via ARM_CLIENT_ID env var in CI/CD
+		client_id            = "4fbfaeab-aea9-4f8c-9dc8-daed7be87f8b"
+		tenant_id            = "83c1a427-ec29-4bf1-9a94-128a7df28ec6"  # Set via ARM_TENANT_ID env var
 		resource_group_name  = "terraform-demo"
 		subscription_id      = "87eaa642-2093-423d-8360-47bf745c874c"
 		storage_account_name = "satfiacdemo"
