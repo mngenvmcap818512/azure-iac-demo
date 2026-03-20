@@ -30,7 +30,7 @@ variable "vnet_name" {
 variable "address_spaces" {
 	description = "List of address spaces for the VNet"
 	type        = list(string)
-	default     = ["10.1.0.0/16"]
+	default     = ["10.1.0.0/16","10.2.0.0/26"]
 }
 
 variable "key_vault_name" {
