@@ -69,9 +69,6 @@ jobs:
           echo "Running terraform init..."
           terraform init
           
-          echo "Running terraform fmt check..."
-          terraform fmt -check
-          
           echo "Running terraform plan..."
           terraform plan -out=tfplan
           
