@@ -33,3 +33,8 @@ variable "address_spaces" {
 	default     = ["10.1.0.0/16"]
 }
 
+variable "key_vault_name" {
+  description = "Name of the Key Vault"
+  type        = string
+  default     = "ne1provisioningkv1"
+}
