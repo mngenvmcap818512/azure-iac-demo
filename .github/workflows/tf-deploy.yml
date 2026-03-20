@@ -52,11 +52,6 @@ jobs:
         echo "dirs=${dirs%,}" >> $GITHUB_OUTPUT
     
     - name: Run Terraform for each directory
-      env:
-        ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-        ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_1_ID }}
-        ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-        ARM_USE_OIDC: true
       run: |
         IFS=',' read -ra dirs <<< "${{ steps.find-dirs.outputs.dirs }}"
         for dir in "${dirs[@]}"; do
